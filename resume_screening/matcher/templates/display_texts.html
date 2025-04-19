@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Extracted Texts from Resumes</title>
+</head>
+<body>
+    <h1>Extracted Texts from Uploaded Resumes</h1>
+    <ul>
+        {% for item in extracted_texts %}
+            <li>
+                <strong>{{ item.filename }}</strong><br>
+                <pre>{{ item.text }}</pre>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

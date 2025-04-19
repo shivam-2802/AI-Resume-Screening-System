@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resume Screening</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body{
+            background-color: rgb(241, 241, 241);
+        }
+        .container{
+            margin: 0 auto;
+            margin-top: 50px;
+            border-radius: 25px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 550px;
+            height: 400px;
+            background-color: rgb(255, 255, 255);
+            box-shadow: 1px 1px 18px 1px rgb(220, 220, 220);
+        }
+
+        form{
+            width: 70%;
+        }
+
+        form label{
+            font-size: 25px;
+        }
+
+        input[type="file"] {
+            border: none;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        select {
+            padding: 10px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        button[type="submit"] {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            width: 50%;
+            font-size: 18px;
+            margin-top: 10px;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        
+        <label for="id_job_title">Job Title:</label>
+        {{ form.job_title }}
+        
+        <br><br>
+        
+        <label for="id_files">Upload Resumes:</label>
+        {{ form.files }}
+    
+        <br><br>
+        
+        <button type="submit">Submit</button>
+    </form> 
+</div> 
+</body>
+</html>
